@@ -67,7 +67,7 @@ def build_report(records: list[dict], output_dir: str, semester: str, course_typ
     # Use all records, but filter out pure empty dictionaries
     valid_records = [r for r in records if r.get("roll_no")]
     if not valid_records:
-        return 
+        return ""
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
     
