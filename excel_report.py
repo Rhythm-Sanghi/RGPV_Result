@@ -67,13 +67,17 @@ def build_report(records: list[dict], output_dir: str, semester: str, course_typ
     # Use all records, but filter out pure empty dictionaries
     valid_records = [r for r in records if r.get("roll_no")]
     if not valid_records:
-        return ""
+        return 
 
-    # [CANONICAL PATH ENFORCEMENT]
-    canonical_output = r"c:\Users\Test\Documents\Projects\RGPV_Result\Output"
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Create an 'Output' folder inside that directory
+    canonical_output = os.path.join(base_dir, "Output")
     os.makedirs(canonical_output, exist_ok=True)
+    
     xlsx_path = os.path.join(canonical_output, "results.xlsx")
     heartbeat_path = os.path.join(canonical_output, "LAST_UPDATE.txt")
+    
 
     print(f"  [OK] Updating results.xlsx with {len(valid_records)} students...")
 
