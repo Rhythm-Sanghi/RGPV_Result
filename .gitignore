@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Generated output (never commit scraped data or logs)
+Output/
+
+# IDE / OS
+.idea/
+.vscode/
+*.DS_Store
+Thumbs.db
+
+# Secrets / session state
+Output/.session.json

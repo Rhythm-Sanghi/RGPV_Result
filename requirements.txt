@@ -1,0 +1,10 @@
+selenium==4.18.1
+undetected-chromedriver==3.5.5
+ddddocr==1.4.11
+pandas==2.2.1
+openpyxl==3.1.2
+Pillow==10.2.0
+beautifulsoup4==4.12.3
+lxml==5.1.0
+fake-useragent==1.5.1
+tqdm==4.66.2
