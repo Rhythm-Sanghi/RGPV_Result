@@ -69,11 +69,8 @@ def build_report(records: list[dict], output_dir: str, semester: str, course_typ
     if not valid_records:
         return ""
 
-    # [CANONICAL PATH ENFORCEMENT]
-    canonical_output = r"c:\Users\Test\Documents\Projects\RGPV_Result\Output"
-    os.makedirs(canonical_output, exist_ok=True)
-    xlsx_path = os.path.join(canonical_output, "results.xlsx")
-    heartbeat_path = os.path.join(canonical_output, "LAST_UPDATE.txt")
+    os.makedirs(output_dir, exist_ok=True)
+    xlsx_path = os.path.join(output_dir, "results.xlsx")
 
     print(f"  [OK] Updating results.xlsx with {len(valid_records)} students...")
 
@@ -118,14 +115,7 @@ def build_report(records: list[dict], output_dir: str, semester: str, course_typ
                 raise e
             time.sleep(1)
     
-    # Heartbeat for verification
-    try:
-        with open(heartbeat_path, "w") as f:
-            f.write(f"Last successful update: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
-            f.write(f"Students processed: {len(valid_records)}\n")
-    except Exception:
-        pass
-        
+
     return xlsx_path
 
 
