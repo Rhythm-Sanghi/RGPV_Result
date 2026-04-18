@@ -1,11 +1,17 @@
 import os
 import re
+import ssl
 import time
 import base64
 import random
 import io
 import threading
 import subprocess
+
+# Disable SSL certificate verification for ChromeDriver auto-download.
+# Needed on institutional/corporate networks with custom certificate authorities.
+os.environ.setdefault("WDM_SSL_VERIFY", "0")
+ssl._create_default_https_context = ssl._create_unverified_context
 import ddddocr
 import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
