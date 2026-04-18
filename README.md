@@ -47,6 +47,14 @@ pip install -r requirements.txt
 ### 4. Make sure Google Chrome is installed
 The scraper uses `undetected-chromedriver`, which automatically downloads the correct ChromeDriver version for your browser.
 
+### 5. Install the Microsoft Visual C++ Redistributable (Windows only)
+`ddddocr` depends on `onnxruntime`, which requires the VC++ runtime DLLs to be present. On a fresh Windows machine these are often missing, causing an `ImportError` on startup.
+
+Download and run the installer from Microsoft:
+```
+https://aka.ms/vs/17/release/vc_redist.x64.exe
+```
+
 ---
 
 ## Running
